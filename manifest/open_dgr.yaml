@@ -73,7 +73,7 @@ spec:
               value: Asia/Taipei
             - name: TAEASK
               value: TsmpAESEncryptionActionSecretKey
-          image: ghcr.io/tpisoftware-digirunner/open-dgr:v4.2.0
+          image: ghcr.io/tpisoftwareospo/opendgr:v4.2.0
           imagePullPolicy: Always
           name: open-dgr
           ports:
