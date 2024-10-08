@@ -53,27 +53,10 @@ spec:
       namespace: open-dgr
     spec:
       containers:
-        - args:
-            - dgrv4-gateway-OpenDGR-v4.2.0-29-g8540640.jar
-            - '-Xms1g'
-            - '-Xmx2g'
-            - '-Dloader.path=./libsext,./lib'
-            - '-Dspring.profiles.active=local'
-            - '-Dserver.port=18080'
-            - '-Dfile.encoding=UTF-8'
-            - '-Dlogging.config=file:config/logback.xml'
-            - '-Ddigi.instance.id=DROS'
-            - '-Dspring.datasource.url=jdbc:h2:mem:dgrdb\;DB_CLOSE_DELAY=-1'
-            - org.springframework.boot.loader.launch.PropertiesLauncher
-          command:
-            - java
-            - '-cp'
-          env:
+        - env:
             - name: TZ
               value: Asia/Taipei
-            - name: TAEASK
-              value: TsmpAESEncryptionActionSecretKey
-          image: ghcr.io/tpisoftwareospo/opendgr:v4.2.0
+          image: ghcr.io/tpisoftwareospo/opendgr
           imagePullPolicy: Always
           name: open-dgr
           ports:
@@ -92,4 +75,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-
